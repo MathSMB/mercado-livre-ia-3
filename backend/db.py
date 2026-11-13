@@ -2,8 +2,8 @@
 Persistência do painel (histórico de execuções, arquivos e sites usados).
 
 Banco escolhido pela variável DATABASE_URL:
-  - Postgres (docker compose up -d):  postgresql+psycopg://painel:painel@localhost:5432/painel
-  - Por padrão tenta o Postgres do docker-compose (localhost:5432). Se ele estiver fora do ar,
+  - Postgres (docker compose up -d):  postgresql+psycopg://painel:painel@localhost:5433/painel
+  - Por padrão tenta o Postgres do docker-compose (localhost:5433). Se ele estiver fora do ar,
     usa SQLite em backend/painel.db (zero configuração). Para forçar SQLite: DATABASE_URL=sqlite:///painel.db
 
 Tabelas:
@@ -37,7 +37,7 @@ sites = Table("sites", meta,
               Column("ultimo_job", String(16)), Column("config", Text))
 
 
-POSTGRES_PADRAO = "postgresql+psycopg://painel:painel@localhost:5432/painel"  # o do docker-compose.yml
+POSTGRES_PADRAO = "postgresql+psycopg://painel:painel@localhost:5433/painel"  # o do docker-compose.yml
 
 
 def _conectar():

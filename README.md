@@ -58,7 +58,7 @@ Os CSVs usam `;` e acentuação compatível com o Excel. Nomes de pastas e arqui
 
 ## Banco de dados e histórico
 
-- **Postgres (Docker):** `docker compose up -d`. O backend encontra o banco sozinho em `localhost:5432`.
+- **Postgres (Docker):** `docker compose up -d`. O backend encontra o banco sozinho em `localhost:5433`.
 - **SQLite:** se o Postgres não estiver no ar, o backend usa `backend\painel.db` automaticamente. Para forçar: `set DATABASE_URL=sqlite:///painel.db`.
 - A tela **Banco e backup** mostra qual banco está em uso.
 
