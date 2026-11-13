@@ -1169,7 +1169,7 @@ function BancoBackup() {
       <section className="cartao">
         <h2>Levar para outro notebook</h2>
         <ol className="regras">
-          <li>Opção simples: pare o Docker, copie a pasta <span className="mono">mercado-livre-ia-3</span> inteira (inclui <span className="mono">data\postgres</span> e <span className="mono">backend\downloads</span>) e rode <span className="mono">docker compose up -d</span> no novo.</li>
+          <li>Copie a pasta <span className="mono">mercado-livre-ia-3</span> inteira (leva os arquivos de <span className="mono">backend\downloads</span>) e rode <span className="mono">docker compose up -d</span> no novo. O banco do Docker fica num volume e não vai junto com a pasta: leve o histórico com o passo 2.</li>
           <li>Ou: baixe o backup aqui, instale o projeto no novo notebook e use "Restaurar backup".</li>
           <li>Se a pasta dos downloads mudar de lugar, o histórico continua, mas os caminhos antigos aparecem como "sumiu" nas inconsistências.</li>
         </ol>
