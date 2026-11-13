@@ -9,3 +9,6 @@ venv/
 *.db
 *.sqlite
 *.sqlite3
+backend/downloads/
+backend/painel.db
+backups/

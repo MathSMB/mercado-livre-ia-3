@@ -1,0 +1,25 @@
+# Banco de dados do painel (Postgres 16).
+# Subir:   docker compose up -d        Parar:   docker compose stop
+# O backend (uvicorn) encontra o banco sozinho em localhost:5433.
+# Os dados ficam no volume "painel_pg" do Docker. Para levar para outro computador,
+# use o botão "Baixar backup" do painel (ou o backup.bat).
+services:
+  db:
+    image: postgres:16
+    container_name: painel-raspagem-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: painel
+      POSTGRES_PASSWORD: painel
+      POSTGRES_DB: painel
+    ports:
+      - "5433:5432"  # 5433 no Windows para não brigar com um Postgres já instalado na 5432
+    volumes:
+      - painel_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U painel"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  painel_pg:
